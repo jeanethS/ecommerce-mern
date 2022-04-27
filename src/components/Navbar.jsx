@@ -1,4 +1,9 @@
-import { Search } from "@mui/icons-material";
+import {
+  Search,
+  SearchOutlined,
+  ShoppingCartOutlined,
+} from "@mui/icons-material";
+import { Badge } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
 const Container = styled.div`
@@ -7,6 +12,7 @@ const Container = styled.div`
 const Wrapper = styled.div`
   padding: 10px 20px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 `;
 
@@ -14,19 +20,39 @@ const Language = styled.span`
   font-size: 14px;
   cursor: pointer;
 `;
-
+const Input = styled.input`
+  border: none;
+`;
+const Logo = styled.h1`
+  font-weight: bold;
+`;
 const SearchContainer = styled.div`
-  border: 1px solid lightgray;
+  border: 0.5px solid lightgray;
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+  padding: 5px;
 `;
 
 const Left = styled.div`
   flex: 1;
+  display: flex;
+  align-items: center;
 `;
 const Right = styled.div`
   flex: 1;
+  display: flex;
+  align-items: center;
 `;
 const Center = styled.div`
   flex: 1;
+  display: flex;
+  align-items: center;
+  text-align: center;
+`;
+const MenuItem = styled.div`
+  font-size: 14px;
+  cursor: pointer;
 `;
 
 const Navbar = () => {
@@ -36,13 +62,20 @@ const Navbar = () => {
         <Left>
           <Language>EN</Language>
           <SearchContainer>
-            input icon
-            <Search />
+            <Input />
+            <SearchOutlined />
           </SearchContainer>
         </Left>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
+        <Center>
+          <Logo>React</Logo>
+        </Center>
+        <Right>
+          <MenuItem>REGISTER</MenuItem>
+          <MenuItem>LOGIN</MenuItem>
+          <Badge badgeContent={4} color="primary">
+            <ShoppingCartOutlined />
+          </Badge>
+        </Right>
       </Wrapper>
     </Container>
   );
